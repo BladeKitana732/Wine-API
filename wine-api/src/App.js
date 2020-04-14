@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Wines from './components/Wines';
 
 // Tasks: 
 // Render the wines in the webpage. (using Wines.js to do so)
@@ -11,7 +12,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-
+      <Wines />
     </div>
   );
 }
