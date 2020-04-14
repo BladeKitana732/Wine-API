@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 //render wine data - completed in console 
-//resource found: https://www.youtube.com/watch?v=12l6lkW6JhE&t=564s
+//resource found: https://www.youtube.com/watch?v=12l6lkW6JhE&t=564s - regarding the axios.create()
 //resource found: https://www.codota.com/code/javascript/functions/axios/create
 
 //creating a api variable as base to be able to pull information from the separate objects in unison
@@ -67,13 +67,28 @@ export default class Wines extends Component {
 
     render() {
         return (
-            <div>
+            <div id='winesComp'>
              <h1>Wine Data Component</h1>
              {/* needed to set a key value to iterate through each unique id to pull names of each wine in data */}
-             { this.state.wine.map(details => <h2 key={details.id}>{details.name}</h2>)}
+            
+          
+                { this.state.wine.map(details => {
+                    <div> 
+                
+                    <h2 key={details.id}>{details.name}</h2>
 
-             { this.state.wine.map(images => <img key= {images.id} src= {images.picture} alt=''
-             />)}
+                    <img key= {details.id} src= {details.picture} alt=''
+                    />)
+
+                    </div>
+
+                )}}
+
+            
+
+             
+
+         
 
 
             </div>
