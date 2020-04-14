@@ -18,7 +18,7 @@ export default class Wines extends Component {
     constructor(props) {
         super(props);
 
-        wineLink.get('/')
+        axios.get(wineLink)
 
         .then((result) => {
             let wines = result.data;
