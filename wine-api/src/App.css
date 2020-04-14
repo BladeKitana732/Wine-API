@@ -1,5 +1,15 @@
 #winesComp {
   border: solid 4px black;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+}
+
+h2 {
+  border: solid 4px red;
+  
 
 }
 
+img {
+  border: solid 4px blue;
+}
