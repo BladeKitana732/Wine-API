@@ -23,7 +23,7 @@ export default class Wines extends Component {
 
 
     
-            console.log(wines);
+            console.log(wines[0]);
     
             this.setState({
                 wine1: wines
