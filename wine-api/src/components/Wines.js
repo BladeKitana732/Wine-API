@@ -26,7 +26,7 @@ export default class Wines extends Component {
             console.log(wines[0]);
     
             this.setState({
-                wine1: wines
+                wine1: wines[0]
             });
             
         })
@@ -45,6 +45,8 @@ export default class Wines extends Component {
         return (
             <div>
              <h1>Wine Data Component</h1>
+
+             <h2> { this.state.wine1 } </h2>
             </div>
         )
     }
