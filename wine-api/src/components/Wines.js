@@ -39,7 +39,27 @@ export default class Wines extends Component {
 
     }
 
+    //creating method to pull more details about wine when image is clicked 
 
+    moreInfo = async () => {
+        let wineInformation = await wineLink.get('/')
+
+        .then(({ data }) => wineInformation);
+
+        this.setState({
+
+        })
+
+
+    }
+
+
+    //create wine post method 
+
+    // createWine = async () => {
+    //     let newWine = await wineLink.post('/')}    
+   
+   
     // componentDidMount() {
 
     //     axios.get(wineLink)
@@ -79,7 +99,7 @@ export default class Wines extends Component {
 
                 </h2>
 
-
+                <button onClick= { this.moreInfo }
                 
             )}
          

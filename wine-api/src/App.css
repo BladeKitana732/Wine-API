@@ -1,15 +1,18 @@
 #winesComp {
-  border: solid 4px black;
+  /* border: solid 4px black; */
   display: grid;
   grid-template-columns: repeat(4,1fr);
+  
 }
 
 h2 {
   border: solid 4px red;
-  
-
+  margin: 0 0 0 0;
+  font-family: cursive;
 }
 
 img {
   border: solid 4px blue;
+  width: 200px;
+  height: 200px;
 }
