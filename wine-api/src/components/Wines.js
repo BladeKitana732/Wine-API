@@ -23,7 +23,7 @@ export default class Wines extends Component {
 
     constructor(props) {
         super(props);
-
+        //this .get method will always pull from api url from wineLink variable and the parameter of ('/') to reference the main path (main API url information)
         wineLink.get('/')
 
         .then((result) => {
