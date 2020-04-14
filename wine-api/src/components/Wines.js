@@ -20,14 +20,23 @@ export default class Wines extends Component {
     
         .then((result) => {
             const wines = result.data;
+
+
     
             console.log(wines);
     
-            // this.setState({
-            //     answer2: birth
-            // });
+            this.setState({
+                wine1: wines
+            });
             
         })
+
+        .catch((err) => {
+
+            console.log('Error has been computed', err)
+    
+        });
+
 
     }
 
