@@ -69,9 +69,12 @@ export default class Wines extends Component {
         return (
             <div>
              <h1>Wine Data Component</h1>
-
+             {/* needed to set a key value to iterate through each unique id to pull names of each wine in data */}
              { this.state.wine.map(details => <h2 key={details.id}>{details.name}</h2>)}
+
+
             </div>
+
         )
     }
 }
