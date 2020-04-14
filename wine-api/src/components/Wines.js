@@ -14,26 +14,31 @@ let wineLink = axios.create({
 
 export default class Wines extends Component {
 
-
-    constructor(props) {
-        super(props);
-
-        axios.get(wineLink)
-
-        .then((result) => {
-            let wines = result.data;
-
-            console.log(wines)
-        })
-
-
-    }
-
     state = {
         
         wine: []
 
     }
+
+
+    constructor(props) {
+        super(props);
+
+        wineLink.get('/')
+
+        .then((result) => {
+            let wines = result.data;
+
+            console.log(wines)
+
+            this.setState({
+                wine: wines
+            })
+        })
+
+
+    }
+
 
     // componentDidMount() {
 
@@ -65,7 +70,7 @@ export default class Wines extends Component {
             <div>
              <h1>Wine Data Component</h1>
 
-             <h2> { this.state.wine1 } </h2>
+             { this.state.wine.map(details => <h2 key={details.id}>{details.name}</h2>)}
             </div>
         )
     }
