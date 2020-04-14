@@ -18,6 +18,14 @@ export default class Wines extends Component {
     constructor(props) {
         super(props);
 
+        wineLink.get('/')
+
+        .then((result) => {
+            let wines = result.data;
+
+            console.log(wines)
+        })
+
 
     }
 
