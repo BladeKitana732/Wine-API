@@ -99,13 +99,14 @@ export default class Wines extends Component {
             
             { this.state.wine.map(details => 
                 
-                
+              <div key= { details.id }>
                 <h2> { details.name } <p>{ details.description }</p>
-                
-                <img src= { details.picture } alt= ' ' onClick= { this.moreInfo.bind(this) } />
 
                 </h2>
+
+                <img src= { details.picture } alt= ' ' onClick= { this.moreInfo.bind(this) } />
                 
+              </div>  
             )}
          
 
