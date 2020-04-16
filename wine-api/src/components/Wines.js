@@ -46,7 +46,7 @@ export default class Wines extends Component {
     moreInfo = async () => {
         let wines = await wineLink.get('/')
 
-        .then(({ data }) => data.map(details => details.country) );
+        .then(({ data }) => data );
         
         console.log(wines);
 
@@ -100,7 +100,7 @@ export default class Wines extends Component {
             { this.state.wine.map(details => 
                 
                 
-                <h2 key= {details.id} > { details.name } <p >{ details.description }</p>
+                <h2> { details.name } <p>{ details.description }</p>
                 
                 <img src= { details.picture } alt= ' ' onClick= { this.moreInfo.bind(this) } />
 
