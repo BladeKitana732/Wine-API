@@ -41,20 +41,19 @@ export default class Wines extends Component {
 
     //creating method to pull more details about wine when image is clicked 
 
-    componentDidMount() {
-        
-
-    }
+    //resource: http://myapi-profstream.herokuapp.com/docs/wine 
     
     moreInfo = async () => {
-        let wines = await wineLink.get('/')
+        let wines = await wineLink.get('/wines/:id')
 
         .then(({ data }) => data );
 
-        console.log(wines)
+        console.log(wines);
 
         this.setState({
+
            wine: wines
+
         })
 
 
@@ -96,12 +95,13 @@ export default class Wines extends Component {
     render() {
         return (
             <div>
+            
              {/* needed to set a key value to iterate through each unique id to pull names of each wine in data */}
             
             { this.state.wine.map(details => 
                 
                 
-                <h2 key= { details.id }> { details.name } <p key= { details.id }>{ details.description }</p>
+                <h2 key= { details.id }> { details.name } <p >{ details.description }</p>
                 
                 <img src= { details.picture } alt= ' ' onClick= { this.moreInfo.bind(this) } />
 
