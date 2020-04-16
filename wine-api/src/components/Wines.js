@@ -24,34 +24,42 @@ export default class Wines extends Component {
     constructor(props) {
         super(props);
         //this .get method will always pull from api url from wineLink variable and the parameter of ('/') to reference the main path (main API url information)
-        wineLink.get('/')
+        // wineLink.get('/')
 
-        .then((result) => {
-            let wines = result.data;
+        // .then((result) => {
+        //     let wines = result.data;
 
-            console.log(wines)
+        //     console.log(wines)
 
-            this.setState({
-                wine: wines
-            })
-        })
-
+        //     this.setState({
+        //         wine: wines
+        //     })
+        // })
+        this.moreInfo();
 
     }
 
     //creating method to pull more details about wine when image is clicked 
 
-    moreInfo = async () => {
-        let wineInformation = await wineLink.get('/')
+    componentDidMount() {
+        
 
-        .then(({ data }) => wineInformation);
+    }
+    
+    moreInfo = async () => {
+        let wines = await wineLink.get('/')
+
+        .then(({ data }) => data );
+
+        console.log(wines)
 
         this.setState({
-
+           wine: wines
         })
 
 
     }
+    
 
 
     //create wine post method 
@@ -87,19 +95,17 @@ export default class Wines extends Component {
 
     render() {
         return (
-            <div id='winesComp'>
+            <div>
              {/* needed to set a key value to iterate through each unique id to pull names of each wine in data */}
             
             { this.state.wine.map(details => 
                 
                 
-                <h2 key= { details.id }> { details.name } <p>{ details.description }</p>
+                <h2 key= { details.id }> { details.name } <p key= { details.id }>{ details.description }</p>
                 
-                <img src= { details.picture } alt= ' '/>
+                <img src= { details.picture } alt= ' ' onClick= { this.moreInfo.bind(this) } />
 
                 </h2>
-
-                <button onClick= { this.moreInfo }
                 
             )}
          
