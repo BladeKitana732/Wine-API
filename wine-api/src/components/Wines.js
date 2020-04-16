@@ -44,10 +44,10 @@ export default class Wines extends Component {
     //resource: http://myapi-profstream.herokuapp.com/docs/wine 
     
     moreInfo = async () => {
-        let wines = await wineLink.get('/wines/:id')
+        let wines = await wineLink.get('/')
 
-        .then(({ data }) => data );
-
+        .then(({ data }) => data.map(details => details.country) );
+        
         console.log(wines);
 
         this.setState({
@@ -55,7 +55,6 @@ export default class Wines extends Component {
            wine: wines
 
         })
-
 
     }
     
@@ -101,7 +100,7 @@ export default class Wines extends Component {
             { this.state.wine.map(details => 
                 
                 
-                <h2 key= { details.id }> { details.name } <p >{ details.description }</p>
+                <h2 key= {details.id} > { details.name } <p >{ details.description }</p>
                 
                 <img src= { details.picture } alt= ' ' onClick= { this.moreInfo.bind(this) } />
 
